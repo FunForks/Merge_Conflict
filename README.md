@@ -151,7 +151,7 @@ When you receive notification of the PR created by your team member:
 3. Ensure that you have the folder for your project open in VS Code
 4. Copy the edited lines and paste them into the Terminal pane, then press Enter. This will pull the changes from your team member's feature branch.
 
-> It's possible that `git` might refuse to merge your collaborator's branch, with the error "fatal: refusing to merge unrelated histories". If this is the case, add the argument `--allow-unrelatedshistories` as shown in the screenshot abave.
+> It's possible that `git` might refuse to merge your collaborator's branch, with the error "fatal: refusing to merge unrelated histories". If this is the case, add the argument `--allow-unrelatedshistories` as shown in the screenshot abave. ([More information here](https://www.educative.io/edpresso/the-fatal-refusing-to-merge-unrelated-histories-git-error))
 
 ![Merge Conflict](screenshots/conflict.png)
 
