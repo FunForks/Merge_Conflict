@@ -23,11 +23,11 @@ You can take it in turns to share your screen with your partner, as you work on 
 
 Imagine that you have spoken with the client, and that you are acting with authority. You are now going to make some changes in the `dev` branch, and test them locally.
 
-6. `cd` into your cloned repository
-7. Open the repository folder in VS Code
-8. Checkout the `dev` branch
-9.  Provide a _cosmetic_ fix for the bug by removing the style from the span, so that it no longer appears red. But the bug is still there. It's just hidden. So don't change the text.
-10. Make some changes to your local repository. For example:
+11. `cd` into your cloned repository
+12. Open the repository folder in VS Code
+13. Checkout the `dev` branch
+14. Provide a _cosmetic_ fix for the bug by removing the style from the span, so that it no longer appears red. But the bug is still there. It's just hidden. So don't change the text.
+15. Make some changes to your local repository. For example:
    * Choose a different banner image
    * Change the header
    * (Leave the list as it is)
