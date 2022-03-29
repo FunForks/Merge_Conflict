@@ -10,10 +10,16 @@ You can take it in turns to share your screen with your partner, as you work on 
 ## Instructions
 
 ### Part 1: Working as an owner, making changes to `dev`
-1. Choose a partner
-2. Give your partner a link to this GitHub repository
-3. Clone your repository to your development machine. (Choose carefully which folder you use to hold your local repository.)
-4. _You will be the owner of your own repository._
+1. Choose a partner (ask for your partner's GitHub profile name)
+2. Visit your copy of this repository on GitHub
+3. Visit the Settings page and click on the Collaborators and Teams button near the top left, in the Access section
+4. Click on the green Add People button
+5. Enter your partner's GitHub profile name and select their name in the drop-down menu
+6. Select the Write radio button
+7. Click on Add [YourPartnersName] to this repository 
+8. Give your partner a link to this GitHub repository
+9. Clone your repository to your development machine. (Choose carefully which folder you use to hold your local repository.)
+10. _You will be the owner of your own repository._
 
 Imagine that you have spoken with the client, and that you are acting with authority. You are now going to make some changes in the `dev` branch, and test them locally.
 
