@@ -2,7 +2,7 @@
 
 In this exercise, you and a partner will make different changes to the same MarkDown document. This will generate a Merge Conflict, which you must then resolve.
 
-### Please be sure to read [the context of this exercise](./Context.md) before you continue. 
+### Please be sure to read [the context of this exercise](./Context.md) before you continue.
 
 ---
 ## Your Mission, if You Decide to Accept It...
@@ -69,7 +69,7 @@ Imagine that you have spoken with the client, and that you are acting with autho
    * Create a short descriptive title
    * Provide details of all the changes that you have made as bullet points
    * Remember that you know the context of what you are writing, but other readers (including yourself in 3 weeks' time) will not know the context. So make your notes clear and detailed.
-   
+
    For example, your commit message might look like this:
    ```markdown
    Apply client-requested changes
@@ -87,17 +87,17 @@ You should now have:
 * Your updated `sourceOfConflict.md` file in the new `client-requested-changes` branch.
 
 Your work as owner is done, for now.
-    
+
 ---
 ### Part 2: Working as a team member, making changes in a `bug-fix` branch
 1. Visit the link to your partner's repository which they sent you in step 9 above.
 2. Near the top left of the repository's main page, you should see a button named Fork. Click on this to create a fork of your partner's repository.
 3. If given a choice of accounts to which to fork the repository, choose your own personal account.
-   
-   If your partner's repository is found at a URL like...  
-   [https://github.com/DCI_group/Merge-Conflict-owner]()  
+
+   If your partner's repository is found at a URL like...
+   [https://github.com/DCI_group/merge_conflict-owner]()
    ... then your fork should be created at a URL like:
-   [https://github.com/your_name/Merge-Conflict-owner]()  
+   [https://github.com/your_name/merge_conflict-owner]()
 
 
 A _fork_ is like a _clone_, but not exactly. Like a clone, it is an identical copy of the original repository. However, a fork will live on GitHub, while a clone lives on your local development computer.
@@ -109,9 +109,9 @@ You will have __read-write access_ to your fork, but only _read access_ to your 
    **Choose carefully which folder you use to hold your local repository. In particular, do NOT put it inside the same folder as the repository for which you are the owner.**
 5. Use `git remote -v` to check what remote Git repositories your local repository is connected to. (The `-v` means "verbose", which makes Git show the path as well as the name of the remote.) You should see something like:
    > ``` bash
-   > origin    git@github.com:your_name/Merge-Conflict-owner.git (fetch)
-   > origin    git@github.com:your_name/Merge-Conflict-owner.git (push)
-    
+   > origin    git@github.com:your_name/merge_conflict-owner.git (fetch)
+   > origin    git@github.com:your_name/merge_conflict-owner.git (push)
+
    In other words, you should have a remote called `origin` which points to your GitHub fork on your personal GitHub account from which you cloned this local repository.
 
 You now need to tell Git where the owner's original "source of truth" repository is. By convention, the name for a Git remote that _you_ own is `origin`. By convention, the name for the "source of truth" repository is `upstream`.
@@ -124,15 +124,15 @@ You now need to tell Git where the owner's original "source of truth" repository
    ```
    **Note that you should replace `<clone-link-that-you-just-copied>` with the actual link that you just copied, so your command might look like this:
    ```bash
-   git remote add upstream git@github.com:DCI_group/Merge-Conflict-owner.git
+   git remote add upstream git@github.com:DCI_group/merge_conflict-owner.git
    ```
-9. Run `git remote -v` again. You should now see something like: 
-    
+9. Run `git remote -v` again. You should now see something like:
+
    > ``` bash
-   > origin    git@github.com:your_name/Merge-Conflict-owner.git (fetch)
-   > origin    git@github.com:your_name/Merge-Conflict-owner.git (push)
-   > upstream      git@github.com:DCI_group/Merge-Conflict-owner.git (fetch)
-   > upstream      git@github.com:DCI_group/Merge-Conflict-owner.git (push)
+   > origin    git@github.com:your_name/merge_conflict-owner.git (fetch)
+   > origin    git@github.com:your_name/merge_conflict-owner.git (push)
+   > upstream      git@github.com:DCI_group/merge_conflict-owner.git (fetch)
+   > upstream      git@github.com:DCI_group/merge_conflict-owner.git (push)
 
 
 Imagine that you have spoken with the dev team, and that you have to make an important bug fix, and also make some minor changes. To do this, you are going to create a new branch based on the `dev` branch, and make your changes in that.
@@ -149,16 +149,17 @@ Imagine that you have spoken with the dev team, and that you have to make an imp
     origin/main
     ```
     Note that the `dev` branch was not visible when you ran `git remote -v`, because you had not yet checked it out locally.
-13. Create a new branch with a name that describes the feature that you are planning to work on. You can give this branch any name you like but make sure that it is descriptive of the changes that you plan to make. I'll call it `bug-fix`. Base this on the current `dev` branch:
+13. Checkout the `dev` branch so that it is available locally: `git checkout dev`
+14. Create a new branch with a name that describes the feature that you are planning to work on. You can give this branch any name you like but make sure that it is descriptive of the changes that you plan to make. I'll call it `bug-fix`. This will be based on your  current `dev` branch:
 
    `git checkout -b bug-fix dev`
 
 __This command says: "`git`, please `checkout` a new `-b`ranch called `bug-fix` and copy the current contents of the `dev` branch into it, as the starting point"._
 
-6. As the owner did above, make some changes to your local fork. You want to ensure that you generate a merge conflict later, so make sure that your changes are different. For example:
-   * To "fix" the bug, remove the style, edit the text to...
+6. As the owner did above, make some changes to your local fork. You want to ensure that you generate a merge conflict later, so make sure that your changes are different from the owner's, but that some of them affect the same lines. For example:
+   * To "fix" the bug, remove the `<p>` and the `span` tags along with the style. In other words, edit the text to...
      ```
-     <p>There is no bug in this file</p>
+     There is no bug in this file.
      ```
    * Leave the banner image as it is
    * Change the header
@@ -172,11 +173,11 @@ __This command says: "`git`, please `checkout` a new `-b`ranch called `bug-fix` 
    * Create a short descriptive title
    * Provide details of all the changes that you have made as bullet points
    * Remember that you know the context of what you are writing, but other readers (including yourself in 3 weeks' time) will not know the context. So make your notes clear and detailed.
-   
+
      For example, your commit message might look like this:
      ```markdown
      Fix bug, header and list type
-  
+
      * Alter header as agreed with dev team
      * Change bullet list to number list
      * Fix bug
@@ -202,7 +203,7 @@ __This command says: "`git`, please `checkout` a new `-b`ranch called `bug-fix` 
 1.  Push your changes to your fork:
    `git push origin bug-fix`
 14. Go to your GitHub fork in your browser and click on the green Compare & Pull Request button that should have appeared.
-15. If you don't see this button:
+15. If you don't see this button, do one of the following:
     * Refresh the page
     * Ensure that the Pull Requests tab is active
     * Ensure that the `bug-fix` branch is selected.
@@ -217,8 +218,9 @@ __This command says: "`git`, please `checkout` a new `-b`ranch called `bug-fix` 
 Owner, when you receive notification of the PR created by your team member:
 1. Visit your repository on GitHub
 2. Click on the Pull Request tab
-3. If there is a Feedback PR, you can ignore it: this would have been generated automatically by GitHub Classrooms, so that your mentors can provide you feedback on your work.
-4. Click on the most recent pull request. Its name could be either the title that your team member used for the most recent commit message (e.g. "Fix bug, header and list type"), or a prettified version of the branch name (e.g. "Bug Fix").
+3. Refresh the page if necessary
+4. If there is a Feedback PR, you can ignore it: this would have been generated automatically by GitHub Classrooms, so that your mentors can provide you feedback on your work.
+5. Click on the most recent pull request. Its name could be either the title that your team member used for the most recent commit message (e.g. "Fix bug, header and list type"), or a prettified version of the branch name (e.g. "Bug Fix").
 
 ![Pull Request page](screenshots/pullrequest.png)
 
@@ -234,22 +236,44 @@ Owner, when you receive notification of the PR created by your team member:
    ```bash
    git checkout -b partner-bug-fix
    ```
-   
+
    **Note**: This command will copy the current state of your `client-requested-changes` into a new branch. If the command fails, run `git status`, to check that you haven't made any changes since the last commit, and if you have, run `git add . && git commit` and write a meaningful commit message before you try executing the line of code that you just pasted again.
 
    **Note**: *Only if you **do*** include the `main` branch name by mistake, your new branch will be a copy of the unchanged `main` branch, with none of your changes. To fix this run:
    ```
    git merge client-requested-changes
    ```
-2. Go back into your browser and copy the second line of code from Step 1 and paste it into the Terminal pane, then press Enter. This will pull the changes from your team member's feature branch.
-   
+2. Go back into your browser and copy the second line of code from Step 1 and paste it into the Terminal pane, then press Enter. This will pull the changes from your team member's feature branch. The command might look something like this:
+
+   ```bash
+   git pull https://github.com/partner/merge_conflict-owner.git bug-fix
+   ```
+
    **Note**: `pull` is actually a shortcut for two Git commands: `fetch` followed by `merge`. The `fetch` command will get the data from your partner's feature branch on their GitHub fork repository; the `merge` command will do its best to apply all your partner's changes to your current branch.
 
 ## Merge Conflict!
 
 As planned, this implicit `merge` command will fail. It fails because both you and your partner have made changes to the same lines of the same file.
 
-> In a real project, all the team members will do their best to work on separate files, so merge conflicts should only occur in exceptional circumstances. But you are just about to learn how to handle such exceptional circumstances, so that everything will go smoothly even when the unexpected happens.
+> Depending on which version of Git you are working with, you may see the following warning:
+>
+> ```bash
+> hint: You have divergent branches and need to specify how > to reconcile them.
+> hint: You can do so by running one of the following > commands sometime before
+> hint: your next pull:
+> hint:
+> hint:   git config pull.rebase false  # merge
+> hint:   git config pull.rebase true   # rebase
+> hint:   git config pull.ff only       # fast-forward only
+> hint:
+> hint: You can replace "git config" with "git config > --global" to set a default
+> hint: preference for all repositories. You can also pass > --rebase, --no-rebase,
+> hint: or --ff-only on the command line to override the > configured default per
+> hint: invocation.
+> fatal: Need to specify how to reconcile divergent branches.
+> ```
+>
+> If this happens, copy the command `git config pull.rebase false  # merge` and execute it, then press the up arrow on your keyboard twice (to show the `git pull ... bug-fix` line again), and execute the pull request a second time.
 
 ![Merge Conflict](screenshots/conflict.png)
 
@@ -269,13 +293,13 @@ As planned, this implicit `merge` command will fail. It fails because both you a
      ```
      ... are deleted.
 5. When you are satisfied, commit your changes. You will see an automatically generated message.
-   > Question: Why is it red? Why should you not use this exactly as it stands?  
-   >  
+   > Question: Why is it red? Why should you not use this exactly as it stands?
+   >
    > Answer: In a commit message, you should:
-   > * Create a short descriptive title  
-   > * Provide details of all the changes that you have made  
+   > * Create a short descriptive title
+   > * Provide details of all the changes that you have made
    > If the first line (the short descriptive title) is more than 50 characters long, VS Code will helpfully display it in red, to warn you that it is too long. (You _can_ ignore this warning if you want.)
-   
+
 ---
 The custom branch that you have just created (`partner-bug-fix`) now holds the most up-to-date version of your project. Now you need to share this with all your team members, so that they can synchronize their work with yours.
 
@@ -285,30 +309,31 @@ The custom branch that you have just created (`partner-bug-fix`) now holds the m
     git merge --no-ff partner-bug-fix
     ```
     * `--no-ff` means `no f`ast `f`orward. This tells Git to work safely and to show errors if there is any difficulty with the merge.
-3.  Push the updated `dev` branch to your GitHub repository
+3.  This will prompt Git to open a new commit message for the merge with an automatically generated title. You can repeat the details of the latest changes if you want.
+4.  Push the updated `dev` branch to your GitHub repository
     `git push origin dev`
-4.  Ask your team member to pull the changes from the `dev` branch.
+5.  Ask your team member to pull the changes from the `dev` branch.
 
 ---
 ### Part 4: Working as team member, updating your repositories
 When you receive notification from the owner that the `dev` branch has been updated:
-1. Checkout the `dev` branch
+1. Checkout the `dev` branch. The sourceOfConflict.md file will still contain the original content.
 2. Run `git pull upstream dev`
-3. Check that everything looks the way you expected after your discussions with the owner. If not, go through this cycle again.
+3. Check that everything in sourceOfConflict.md looks the way you expected after your discussions with the owner. If not, go through this cycle again.
 4. Finally, push the updated version of your `dev` branch to your GitHub repository.
 
 > Now, all 4 repositories should be in the same state. In all the repositories...
-> 
+>
 >   1. The owner's local repository on their development computer should have the original `main` branch still unchanged
 >   2. The owner's authoritative repository on GitHub (`upstream`)
 >   3. Your fork on GitHub of the authoritative repository (`origin`)
 >   4. Your local clone of the forked repository
-> 
+>
 > ... the `main` branch will be unchanged, and the `dev` branch will have been updated.
 
 The only differences will be that the owner's local repository will have two custom branches...
 * `client-requested-changes`
-* `partner-bug-fix` 
+* `partner-bug-fix`
 ... and the team member's local repository and GitHub fork will have one custom branch:
 * `bug-fix`
 
@@ -338,5 +363,3 @@ Now all the other team members can run `git checkout main && git pull upstream m
 * Make `dev` locally identical to the current `main`
 
 ... ready to begin work on the next version.
-
-
