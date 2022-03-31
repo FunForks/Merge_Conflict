@@ -24,47 +24,49 @@ You can take it in turns to share your screen with your partner, as you work on 
 ### Part 1: Working as an owner, making changes to `dev`
 
 1. _You are be the owner of this GitHub repository. You will be the only person with admin rights to it. Only you can `push` to this repository._
-2. Clone this repository to your development computer. (Choose carefully which folder you use to hold your local repository.)
-3. `cd` into your cloned repository
-4. Open the repository folder in VS Code
+2. Actually, that's not true. To simplify this exercise, your GitHub repository is public. This means that you don't have to go through an extra step of inviting contributors to join you and giving them read-only access rights. But let's pretend it's true while you do this exercise.
+3. Clone this repository to your development computer. (Choose carefully which folder you use to hold your local repository.)
+4. `cd` into your cloned repository
+5. Open the repository folder in VS Code
    ```bash
    code -r .
    ```
    Or in plain English: "VS `code`, `-r`euse this window to open `.` (= this folder)"
-5. Open a Terminal pane (`Ctrl-` `)
-6. For technical reasons, the repository currently contains only a `main` branch. Start by creating a `dev` branch from the `main` branch:
+6. Open a Terminal pane (`Ctrl-` `)
+7. For technical reasons, the repository currently contains only a `main` branch. Start by creating a `dev` branch from the `main` branch:
    ```bash
    git checkout -b dev
    ```
    The `dev` branch should now be identical to the `main` branch.
-7. Push the `dev` branch to your (owner's) GitHub repository:
+8. Push the `dev` branch to your (owner's) GitHub repository:
    ```bash
    git push origin dev
    ```
-8. Choose a partner
-9.  Give your partner a link to this GitHub repository. Copy the link from your browser's address bar. Your partner can now start to follow the **Working as a team member** steps below.
+9. Choose a partner
+10. Give your partner a link to this GitHub repository. Copy the link from your browser's address bar. Your partner can now start to follow the **Working as a team member** steps below.
 
 Imagine that you have spoken with the client, and that you are acting with authority. You are now going to create a new branch, make some changes, and test them locally.
 
-10. Create a new branch called `client-requested-changes`
+11. Create a new branch called `client-requested-changes`
    ```
    git checkout -b client-requested-changes
    ```
-11. Open the `sourceOfConflict.md` file. Notice that it contains a "bug" which will appear in red if you preview the MarkDown text.
-12. Provide a _cosmetic_ fix for the "bug" by removing the style from the span, so that it no longer appears red. But the bug is still there. It's just hidden. So don't change the text. It should look like this:
+12. Open the `sourceOfConflict.md` file. Notice that it contains a "bug" which will appear in red if you preview the MarkDown text.
+13. Open a preview of the markdown file in VS Code. First split the editor pane (Ctrl-\) then show the preview (Ctrl-Shift-V). This will let you see the preview change as you update the `sourceOfConflict.md` file.
+14. Provide a _cosmetic_ fix for the "bug" by removing the style from the span, so that it no longer appears red. But the bug is still there. It's just hidden. So don't change the text. It should look like this:
    ```html
    <p>There is a bug in this file.<p>
    ```
-13. Make some other changes as you like. For example:
+15. Make some other changes as you like. For example:
    * Choose a different banner image
    * Change the header
    * (Leave the list as it is)
    * Add a paragraph of text
-14. Run `git status` to see which files have changed
-15. Run `git diff` to see which files have been edited
-16. Use `git add .` to add your changes to git's staging area
-17. Use `git commit` to commit your changes (but read [this](https://github.com/DCIForks/E07/wiki/Good-git-commit-messages:-using-VS-Code-as-your-git-editor) first).
-18. When writing the commit message:
+16. Run `git status` to see which files have changed
+17. Run `git diff` to see which files have been edited
+18. Use `git add .` to add your changes to git's staging area
+19. Use `git commit` to commit your changes (but read [this](https://github.com/DCIForks/E07/wiki/Good-git-commit-messages:-using-VS-Code-as-your-git-editor) first).
+20. When writing the commit message:
    * Refer to the output of the `git status` and `git diff`
    * Create a short descriptive title
    * Provide details of all the changes that you have made as bullet points
@@ -78,8 +80,15 @@ Imagine that you have spoken with the client, and that you are acting with autho
    * Use text given by client for the header
    * Add paragraph provided by client
    ```
-19. Run `git log` to check that your commit was correctly applied, and that your commit message is clear.
-20. *Only if necessary* you can run `git commit -amend` to correct any mistakes in your commit message.
+21. Run `git log` to check that your commit was correctly applied, and that your commit message is clear.
+  > Git asks the [less](https://linuxize.com/post/less-command-in-linux/) utility to display log entries, and other data that may display over several lines or several pages.
+  >* If you see a colon (`:`) in the last line in the Terminal window, this means "Press the space bar if you want to see more log entries."
+  >* If you see `(END)` this means "There are no more log entries.
+  >* At any time you can press `Shift-Q` to stop the less utility
+  >* If all the information then suddenly disappears from the Terminal, run the [following command](https://serebrov.github.io/html/2014-01-04-git-log-and-less-keep-output.html) to stop it from disappearing in the future:
+  >
+  >   `git config --global --replace-all core.pager "less -iXFR"`
+22. *Only if necessary* you can run `git commit -amend` to correct any mistakes in your commit message.
 
 You should now have:
 * The original `sourceOfConflict.md` file in `main`
@@ -102,12 +111,14 @@ Your work as owner is done, for now.
 
 A _fork_ is like a _clone_, but not exactly. Like a clone, it is an identical copy of the original repository. However, a fork will live on GitHub, while a clone lives on your local development computer.
 
-You will have __read-write access_ to your fork, but only _read access_ to your partner's (owner's) repository. This means that you cannot push any changes to the owner's repository. You need to fork it, so that you have your own copy of the repository, so that you can push your work to GitHub. As you will see, GitHub will then suggest that you create a _pull request_ for your partner to review.
+You will have __read-write access_ to your fork, but only _read access_ to your partner's (owner's) repository*. This means that you cannot push any changes to the owner's repository. You need to fork it, so that you have your own copy of the repository, so that you can push your work to GitHub. As you will see, GitHub will then suggest that you create a _pull request_ for your partner to review.
 
-4. Clone your fork to your development computer.
+\* *Actually, that's not true. To simplify this exercise, your GitHub repository is public. This means that you can skip some administrative steps. So you could push changes to the owner's GitHub repository. But let's pretend you can't while you do this exercise.*
+
+1. Clone your fork to your development computer.
 
    **Choose carefully which folder you use to hold your local repository. In particular, do NOT put it inside the same folder as the repository for which you are the owner.**
-5. Use `git remote -v` to check what remote Git repositories your local repository is connected to. (The `-v` means "verbose", which makes Git show the path as well as the name of the remote.) You should see something like:
+2. Use `git remote -v` to check what remote Git repositories your local repository is connected to. (The `-v` means "verbose", which makes Git show the path as well as the name of the remote.) You should see something like:
    > ``` bash
    > origin    git@github.com:your_name/merge_conflict-owner.git (fetch)
    > origin    git@github.com:your_name/merge_conflict-owner.git (push)
@@ -116,9 +127,9 @@ You will have __read-write access_ to your fork, but only _read access_ to your 
 
 You now need to tell Git where the owner's original "source of truth" repository is. By convention, the name for a Git remote that _you_ own is `origin`. By convention, the name for the "source of truth" repository is `upstream`.
 
-6. In your browser, visit the link that your partner sent you earlier (the page from which you forked your GitHub repository).
-7. Click on the green Code button and copy the path that _would_ allow you to clone the repository (but don't clone it).
-8. In the Terminal window for your local clone, run the following command:
+3. In your browser, visit the link that your partner sent you earlier (the page from which you forked your GitHub repository).
+4. Click on the green Code button and copy the path that _would_ allow you to clone the repository (but don't clone it).
+5. In the Terminal window for your local clone, run the following command:
    ```bash
    git remote add upstream <clone-link-that-you-just-copied>
    ```
@@ -126,7 +137,7 @@ You now need to tell Git where the owner's original "source of truth" repository
    ```bash
    git remote add upstream git@github.com:DCI_group/merge_conflict-owner.git
    ```
-9. Run `git remote -v` again. You should now see something like:
+6. Run `git remote -v` again. You should now see something like:
 
    > ``` bash
    > origin    git@github.com:your_name/merge_conflict-owner.git (fetch)
@@ -137,26 +148,26 @@ You now need to tell Git where the owner's original "source of truth" repository
 
 Imagine that you have spoken with the dev team, and that you have to make an important bug fix, and also make some minor changes. To do this, you are going to create a new branch based on the `dev` branch, and make your changes in that.
 
-10. Check what branches you have locally. Run `git branch -v`. (The `-v` means `v`erbose, so Git will print out both the id and the title of the latest commit message for each branch.)
-11. You are likely to see only a `main` branch. It might look something like this:
+7. Check what branches you have locally. Run `git branch -v`. (The `-v` means `v`erbose, so Git will print out both the id and the title of the latest commit message for each branch.)
+8. You are likely to see only a `main` branch. It might look something like this:
     ```bash
     * main cdd7c29 Initial commit
     ```
-12. To see all the branches that are available on your remote GitHub fork, run `git remote -r` (where `-r` means `r`emote). You should see something like this:
+9.  To see all the branches that are available on your remote GitHub fork, run `git remote -r` (where `-r` means `r`emote). You should see something like this:
     ```bash
     origin/HEAD -> origin/main
     origin/dev
     origin/main
     ```
     Note that the `dev` branch was not visible when you ran `git remote -v`, because you had not yet checked it out locally.
-13. Checkout the `dev` branch so that it is available locally: `git checkout dev`
-14. Create a new branch with a name that describes the feature that you are planning to work on. You can give this branch any name you like but make sure that it is descriptive of the changes that you plan to make. I'll call it `bug-fix`. This will be based on your  current `dev` branch:
+10. Checkout the `dev` branch so that it is available locally: `git checkout dev`
+11. Create a new branch with a name that describes the feature that you are planning to work on. You can give this branch any name you like but make sure that it is descriptive of the changes that you plan to make. I'll call it `bug-fix`. This will be based on your  current `dev` branch:
 
    `git checkout -b bug-fix dev`
 
 __This command says: "`git`, please `checkout` a new `-b`ranch called `bug-fix` and copy the current contents of the `dev` branch into it, as the starting point"._
 
-6. As the owner did above, make some changes to your local fork. You want to ensure that you generate a merge conflict later, so make sure that your changes are different from the owner's, but that some of them affect the same lines. For example:
+12. As the owner did above, make some changes to your local fork. You want to ensure that you generate a merge conflict later, so make sure that your changes are different from the owner's, but that some of them affect the same lines. For example:
    * To "fix" the bug, remove the `<p>` and the `span` tags along with the style. In other words, edit the text to...
      ```
      There is no bug in this file.
@@ -164,11 +175,11 @@ __This command says: "`git`, please `checkout` a new `-b`ranch called `bug-fix` 
    * Leave the banner image as it is
    * Change the header
    * Change the list to a numbered list
-7.  Run `git status` to see which files have changed
-8.  Run `git diff` to see which files have been edited
-9.  Use `git add .` to add your changes to git's staging area
-10. Use `git commit` to commit your changes (but read [this](https://github.com/DCIForks/E07/wiki/Good-git-commit-messages:-using-VS-Code-as-your-git-editor) first).
-11. When writing the commit message:
+13. Run `git diff` to see which files have been edited
+14. Run `git status` to see which files have changed
+15. Use `git add .` to add your changes to git's staging area
+16. Use `git commit` to commit your changes (but read [this](https://github.com/DCIForks/E07/wiki/Good-git-commit-messages:-using-VS-Code-as-your-git-editor) first).
+17. When writing the commit message:
    * Refer to the output of the `git status` and `git diff`
    * Create a short descriptive title
    * Provide details of all the changes that you have made as bullet points
@@ -202,14 +213,14 @@ __This command says: "`git`, please `checkout` a new `-b`ranch called `bug-fix` 
 ---
 1.  Push your changes to your fork:
    `git push origin bug-fix`
-14. Go to your GitHub fork in your browser and click on the green Compare & Pull Request button that should have appeared.
-15. If you don't see this button, do one of the following:
+2. Go to your GitHub fork in your browser and click on the green Compare & Pull Request button that should have appeared.
+3. If you don't see this button, do one of the following:
     * Refresh the page
     * Ensure that the Pull Requests tab is active
     * Ensure that the `bug-fix` branch is selected.
-16. Check that the automatically created message is meaningful, and if not, edit it. Add a personal note, if you want.
-17. Click on the green Create Pull Request button.
-18. GitHub will probably now take you to the page for the owner's repository.
+4.  Check that the automatically created message is meaningful, and if not, edit it. Add a personal note, if you want.
+5.  Click on the green Create Pull Request button.
+6.  GitHub will probably now take you to the page for the owner's repository.
 
 > In a real project, you might in fact make a number of commits and push them all to your local fork before you make the Pull Request. This is why GitHub does not generate the Pull Request automatically, but waits until you are ready.
 
@@ -231,7 +242,7 @@ Owner, when you receive notification of the PR created by your team member:
 > ![Command Line Instructions](screenshots/cli.png)
 > The automatically generated code creates a new branch based on `main`, but you want to check that everything is compatible with your custom `client-requested-changes` branch.
 
-1. Copy the first line of code for Step 1 **without the final `main` branch name** and paste it into the Terminal in VS Code. Press Enter to execute this command. It might look something like this:
+6. Copy the first line of code for Step 1 **without the final `main` branch name** and paste it into the Terminal in VS Code. Press Enter to execute this command. It might look something like this:
 
    ```bash
    git checkout -b partner-bug-fix
@@ -243,7 +254,7 @@ Owner, when you receive notification of the PR created by your team member:
    ```
    git merge client-requested-changes
    ```
-2. Go back into your browser and copy the second line of code from Step 1 and paste it into the Terminal pane, then press Enter. This will pull the changes from your team member's feature branch. The command might look something like this:
+7. Go back into your browser and copy the second line of code from Step 1 and paste it into the Terminal pane, then press Enter. This will pull the changes from your team member's feature branch. The command might look something like this:
 
    ```bash
    git pull https://github.com/partner/merge_conflict-owner.git bug-fix
@@ -303,16 +314,16 @@ As planned, this implicit `merge` command will fail. It fails because both you a
 ---
 The custom branch that you have just created (`partner-bug-fix`) now holds the most up-to-date version of your project. Now you need to share this with all your team members, so that they can synchronize their work with yours.
 
-1.  Checkout the `dev` branch
-2.  Merge the changes from the custom branch you were just working on. Your Git command might look something like this:
+6.  Checkout the `dev` branch
+7.  Merge the changes from the custom branch you were just working on. Your Git command might look something like this:
     ```bash
     git merge --no-ff partner-bug-fix
     ```
     * `--no-ff` means `no f`ast `f`orward. This tells Git to work safely and to show errors if there is any difficulty with the merge.
-3.  This will prompt Git to open a new commit message for the merge with an automatically generated title. You can repeat the details of the latest changes if you want.
-4.  Push the updated `dev` branch to your GitHub repository
+8.  This will prompt Git to open a new commit message for the merge with an automatically generated title. You can repeat the details of the latest changes if you want.
+9.  Push the updated `dev` branch to your GitHub repository
     `git push origin dev`
-5.  Ask your team member to pull the changes from the `dev` branch.
+10. Ask your team member to pull the changes from the `dev` branch.
 
 ---
 ### Part 4: Working as team member, updating your repositories
