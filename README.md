@@ -111,7 +111,7 @@ Your work as owner is done, for now.
 
 A _fork_ is like a _clone_, but not exactly. Like a clone, it is an identical copy of the original repository. However, a fork will live on GitHub, while a clone lives on your local development computer.
 
-You will have __read-write access_ to your fork, but only _read access_ to your partner's (owner's) repository*. This means that you cannot push any changes to the owner's repository. You need to fork it, so that you have your own copy of the repository, so that you can push your work to GitHub. As you will see, GitHub will then suggest that you create a _pull request_ for your partner to review.
+You will have _read-write access_ to your fork, but only _read access_ to your partner's (owner's) repository*. This means that you cannot push any changes to the owner's repository. You need to fork it, so that you have your own copy of the repository, so that you can push your work to GitHub. As you will see, GitHub will then suggest that you create a _pull request_ for your partner to review.
 
 \* *Actually, that's not true. To simplify this exercise, your GitHub repository is public. This means that you can skip some administrative steps. So you could push changes to the owner's GitHub repository. But let's pretend you can't while you do this exercise.*
 
