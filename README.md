@@ -165,7 +165,7 @@ Imagine that you have spoken with the dev team, and that you have to make an imp
 
    `git checkout -b bug-fix dev`
 
-__This command says: "`git`, please `checkout` a new `-b`ranch called `bug-fix` and copy the current contents of the `dev` branch into it, as the starting point"._
+_This command says: "`git`, please `checkout` a new `-b`ranch called `bug-fix` and copy the current contents of the `dev` branch into it, as the starting point"._
 
 12. As the owner did above, make some changes to your local fork. You want to ensure that you generate a merge conflict later, so make sure that your changes are different from the owner's, but that some of them affect the same lines. For example:
    * To "fix" the bug, remove the `<p>` and the `span` tags along with the style. In other words, edit the text to...
