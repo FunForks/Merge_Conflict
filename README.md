@@ -279,13 +279,11 @@ As planned, this implicit `merge` command will fail. It fails because both you a
 > hint:   git config pull.rebase true   # rebase
 > hint:   git config pull.ff only       # fast-forward only
 > hint:
-> hint: You can replace "git config" with "git config  
-> hint: --global" to set a default
-> hint: preference for all repositories. You can also pass
-> hint: --rebase, --no-rebase,
-> hint: or --ff-only on the command line to override the
-> hint: configured default per
-> hint: invocation.
+> hint: You can replace "git config" with  
+> hint: "git config --global" to set a default preference  
+> hint: for all repositories. You can also pass --rebase,  
+> hint: --no-rebase, or --ff-only on the command line to  
+> hint: override the configured default per invocation.  
 > fatal: Need to specify how to reconcile divergent branches.
 > ```
 >
