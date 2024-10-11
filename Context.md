@@ -52,7 +52,7 @@ If you are the project owner, one of your tasks will be to review the PRs submit
 
 **Note that your `dev` branch will remain unchanged: it is the new branch which will receive any recent changes that have been made to the `dev` branch.**
 
-You can then test if it the merged branch works as planned.
+You can then test if the merged branch works as planned.
 
 If it doesn't work exactly as planned, you can discuss any issues with the team member. The Pull Request page on GitHub provides a convenient place to exchange messages about any changes that need to be made.
 
