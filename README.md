@@ -269,8 +269,10 @@ As planned, this implicit `merge` command will fail. It fails because both you a
 > Depending on which version of Git you are working with, you may see the following warning:
 >
 > ```bash
-> hint: You have divergent branches and need to specify how > to reconcile them.
-> hint: You can do so by running one of the following > commands sometime before
+> hint: You have divergent branches and need to specify how  
+> to reconcile them.
+> hint: You can do so by running one of the following  
+> commands sometime before
 > hint: your next pull:
 > hint:
 > hint:   git config pull.rebase false  # merge
